@@ -10,4 +10,16 @@ defmodule KVStore do
   def handle_call({:get, key}, state) do
     {Map.get(state, key), state}
   end
+
+  def start do
+    ServerProcess.start(KVStore)
+  end
+
+  def put(pid, key, value) do
+    ServerProcess.call(pid, {:put, key, value})
+  end
+
+  def get(pid, key) do
+    ServerProcess.call(pid, {:get, key})
+  end
 end

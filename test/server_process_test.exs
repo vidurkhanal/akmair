@@ -1,4 +1,4 @@
-defmodule KVTest do
+defmodule ServerProcessTest do
   use ExUnit.Case
 
   test "Testing Server Process with KV Store" do
